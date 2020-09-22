@@ -1,9 +1,9 @@
 const users = [];
-
+const colors = ["87556f", "ff6363","543864","d65a31","202060","84142d","c02739","219897","278ea5","2b3595"];
 const addUser = ({ id, name, room }) => {
   name = name.trim().toLowerCase();
   room = room.trim().toLowerCase();
-  const colorCode = Math.floor(Math.random()*16777215).toString(16);
+  const colorCode = colors[Math.floor(Math.random()*10)];
 
   const existingUser = users.find((user) => user.room === room && user.name === name);
 
