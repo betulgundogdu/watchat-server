@@ -1,5 +1,5 @@
 const users = [];
-const colors = ["87556f", "ff6363","543864","d65a31","202060","84142d","c02739","219897","278ea5","2b3595"];
+const colors = ["3e978b", "ff7e67","ff4b5c","ff9a76","709fb0","84142d","cf7500","206a5d","c70039","63b7af"];
 const addUser = ({ id, name, room }) => {
   name = name.trim().toLowerCase();
   room = room.trim().toLowerCase();
