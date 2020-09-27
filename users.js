@@ -3,6 +3,8 @@ const colors = ["3e978b", "ff7e67","ff4b5c","ff9a76","709fb0","84142d","cf7500",
 const addUser = ({ id, name, room }) => {
   name = name.trim().toLowerCase();
   room = room.trim().toLowerCase();
+  
+  const typing = false;
   const colorCode = colors[Math.floor(Math.random()*10)];
 
   const existingUser = users.find((user) => user.room === room && user.name === name);
@@ -10,7 +12,7 @@ const addUser = ({ id, name, room }) => {
   if(!name || !room) return { error: 'Username and room are required.' };
   if(existingUser) return { error: 'Username is taken.' };
 
-  const user = { id, name, room, colorCode };
+  const user = { id, name, room, colorCode, typing };
   users.push(user);
 
   return { user };
