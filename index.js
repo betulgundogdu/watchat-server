@@ -23,6 +23,7 @@ io.on('connect', (socket) => {
     socket.emit('message', { user: 'system', text: `${user.name}, welcome to room ${user.room}.`});
     socket.broadcast.to(user.room).emit('message', { user: 'system', text: `${user.name} has joined!` });
     io.to(user.room).emit('roomData', { room: user.room, users: getUsersInRoom(user.room), color:user.colorCode});
+    io.to(user.room).emit('room', { video: {url: 'https://www.youtube.com/watch?v=GTCd0hmjHBs'}});
     callback();
   });
 
